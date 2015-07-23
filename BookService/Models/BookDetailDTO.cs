@@ -1,7 +1,8 @@
 ﻿
+using Microsoft.Azure.Mobile.Server;
 namespace BookService.Models
 {
-    public class BookDetailDTO
+    public class BookDetailDTO : EntityData
     {
         public int id { get; set; }
         public string title { get; set; }
