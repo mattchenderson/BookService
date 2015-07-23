@@ -23,9 +23,9 @@ namespace BookService.Controllers
             var books = from b in db.Books
                         select new BookDTO()
                         {
-                            Id = b.Id,
-                            Title = b.Title,
-                            AuthorName = b.Author.Name
+                            id = b.Id,
+                            title = b.Title,
+                            authorName = b.Author.Name
                         };
 
             return books;
@@ -38,13 +38,13 @@ namespace BookService.Controllers
             var book = await db.Books.Include(b => b.Author).Select(b =>
                 new BookDetailDTO()
                 {
-                    Id = b.Id,
-                    Title = b.Title,
-                    Year = b.Year,
-                    Price = b.Price,
-                    AuthorName = b.Author.Name,
-                    Genre = b.Genre
-                }).SingleOrDefaultAsync(b => b.Id == id);
+                    id = b.Id,
+                    title = b.Title,
+                    year = b.Year,
+                    price = b.Price,
+                    authorName = b.Author.Name,
+                    genre = b.Genre
+                }).SingleOrDefaultAsync(b => b.id == id);
             if (book == null)
             {
                 return NotFound();
@@ -105,9 +105,9 @@ namespace BookService.Controllers
 
             var dto = new BookDTO()
             {
-                Id = book.Id,
-                Title = book.Title,
-                AuthorName = book.Author.Name
+                id = book.Id,
+                title = book.Title,
+                authorName = book.Author.Name
             };
 
             return CreatedAtRoute("DefaultApi", new { id = book.Id }, dto);

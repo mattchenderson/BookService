@@ -3,11 +3,11 @@ namespace BookService.Models
 {
     public class BookDetailDTO
     {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public int Year { get; set; }
-        public decimal Price { get; set; }
-        public string AuthorName { get; set; }
-        public string Genre { get; set; }
+        public int id { get; set; }
+        public string title { get; set; }
+        public int year { get; set; }
+        public decimal price { get; set; }
+        public string authorName { get; set; }
+        public string genre { get; set; }
     }
 }
